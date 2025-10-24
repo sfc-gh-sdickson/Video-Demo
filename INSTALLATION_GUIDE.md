@@ -1,3 +1,5 @@
+<img src="diagrams/Snowflake_Logo.svg" alt="Snowflake Logo" width="200"/>
+
 # Snowflake Video Intelligence Demo - Installation Guide
 
 ## Table of Contents

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="900" height="250">
+  <!-- Background -->
+  <rect width="900" height="250" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Video Analysis Workflow
+  </text>
+  
+  <!-- Step 1 -->
+  <rect x="20" y="50" width="100" height="80" fill="#29B5E8" stroke="#1a75bb" stroke-width="2" rx="5"/>
+  <text x="70" y="75" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">📤</text>
+  <text x="70" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Upload</text>
+  <text x="70" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">Video</text>
+  <text x="70" y="165" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">User uploads video</text>
+  <text x="70" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">through UI</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="120" y1="90" x2="160" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  
+  <!-- Step 2 -->
+  <rect x="160" y="50" width="100" height="80" fill="#764ba2" stroke="#5a3777" stroke-width="2" rx="5"/>
+  <text x="210" y="75" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">💾</text>
+  <text x="210" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Store</text>
+  <text x="210" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">in Stage</text>
+  <text x="210" y="165" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Video stored in</text>
+  <text x="210" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Snowflake stage</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="260" y1="90" x2="300" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  
+  <!-- Step 3 -->
+  <rect x="300" y="50" width="100" height="80" fill="#00D4AA" stroke="#00a080" stroke-width="2" rx="5"/>
+  <text x="350" y="75" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">📝</text>
+  <text x="350" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Register</text>
+  <text x="350" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">Metadata</text>
+  <text x="350" y="165" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Metadata captured</text>
+  <text x="350" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">in tables</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="400" y1="90" x2="440" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  
+  <!-- Step 4 -->
+  <rect x="440" y="50" width="100" height="80" fill="#FF4B4B" stroke="#cc3c3c" stroke-width="2" rx="5"/>
+  <text x="490" y="75" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">❓</text>
+  <text x="490" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Ask</text>
+  <text x="490" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">Question</text>
+  <text x="490" y="165" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">User submits</text>
+  <text x="490" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">natural language query</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="540" y1="90" x2="580" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  
+  <!-- Step 5 -->
+  <rect x="580" y="50" width="100" height="80" fill="#4A90E2" stroke="#3a70c2" stroke-width="2" rx="5"/>
+  <text x="630" y="75" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">🤖</text>
+  <text x="630" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Analyze</text>
+  <text x="630" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">with AI</text>
+  <text x="630" y="165" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Cortex AI</text>
+  <text x="630" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">processes query</text>
+  
+  <!-- Arrow 5 -->
+  <line x1="680" y1="90" x2="720" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  
+  <!-- Step 6 -->
+  <rect x="720" y="50" width="100" height="80" fill="#9C27B0" stroke="#7b1fa2" stroke-width="2" rx="5"/>
+  <text x="770" y="75" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">💬</text>
+  <text x="770" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Get</text>
+  <text x="770" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">Answer</text>
+  <text x="770" y="165" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">AI returns</text>
+  <text x="770" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">intelligent response</text>
+  
+  <!-- Feedback arrow -->
+  <path d="M 770 140 Q 770 210, 450 210 Q 130 210, 130 140" stroke="#ff9800" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead4)"/>
+  <text x="450" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#ff9800">Query logged for analytics and continuous improvement</text>
+  
+  <!-- Arrow marker definitions -->
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#666"/>
+    </marker>
+    <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#ff9800"/>
+    </marker>
+  </defs>
+</svg>
+

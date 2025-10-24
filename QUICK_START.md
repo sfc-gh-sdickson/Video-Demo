@@ -1,3 +1,5 @@
+<img src="diagrams/Snowflake_Logo.svg" alt="Snowflake Logo" width="200"/>
+
 # 🚀 Quick Start Guide - Snowflake Video Intelligence Demo
 
 Get up and running in **5 minutes**!

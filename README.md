@@ -1,3 +1,5 @@
+<img src="diagrams/Snowflake_Logo.svg" alt="Snowflake Logo" width="200"/>
+
 # 🎥 Snowflake Video Intelligence Demo
 
 A comprehensive video analysis solution built entirely on Snowflake, leveraging Cortex AI for intelligent video content analysis and natural language queries.
@@ -49,32 +51,7 @@ This demo showcases Snowflake's enterprise-grade capabilities for video intellig
 
 ### Technology Stack
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Streamlit UI Layer                    │
-│         (User Interface & Interaction)                   │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│              Snowflake Cortex AI Layer                   │
-│    (Natural Language Processing & Video Analysis)        │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│                 Data Processing Layer                    │
-│  (Tables, Procedures, Functions, Views)                  │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│                  Storage Layer                           │
-│         (Stages, Video Files, Metadata)                  │
-└─────────────────────────────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│                 Compute Layer                            │
-│            (Virtual Warehouses)                          │
-└─────────────────────────────────────────────────────────┘
-```
+![Architecture Diagram](diagrams/architecture.svg)
 
 ### Components
 
@@ -186,16 +163,7 @@ This demo showcases Snowflake's enterprise-grade capabilities for video intellig
 
 ### Workflow
 
-```mermaid
-graph LR
-    A[Upload Video] --> B[Video Stored in Stage]
-    B --> C[Register Metadata]
-    C --> D[Ask Question]
-    D --> E[Cortex AI Analysis]
-    E --> F[Get Answer]
-    F --> G[Log Result]
-    G --> H[View Analytics]
-```
+![Video Analysis Workflow](diagrams/workflow.svg)
 
 ---
 
@@ -240,29 +208,14 @@ graph LR
 
 ## 🗂️ Project Structure
 
-```
-video-intelligence-demo/
-│
-├── README.md                          # This file
-├── INSTALLATION_GUIDE.md              # Detailed installation steps
-│
-├── setup/
-│   ├── 01_initial_setup.sql          # Database, schema, warehouse setup
-│   ├── 02_create_tables.sql          # Table creation
-│   └── 03_create_functions.sql       # Procedures, functions, views
-│
-├── streamlit_app.py                   # Main Streamlit application
-│
-├── docs/
-│   ├── ARCHITECTURE.md                # Detailed architecture documentation
-│   ├── API_REFERENCE.md               # API and function reference
-│   └── BEST_PRACTICES.md              # Best practices guide
-│
-└── examples/
-    ├── sample_queries.sql             # Example SQL queries
-    └── test_videos/                   # Sample test videos (not included)
-        └── README.md                  # Where to get test videos
-```
+![Project Structure](diagrams/project-structure.svg)
+
+**Key Components:**
+- **Documentation**: README, Installation Guide, Quick Start, Deployment Guide
+- **Application**: `streamlit_app.py` - Full-featured Streamlit app
+- **Setup Scripts**: 3 SQL files for database initialization  
+- **Examples**: 30+ sample queries and test video guidelines
+- **Diagrams**: SVG architecture and workflow diagrams
 
 ---
 

@@ -1,3 +1,5 @@
+<img src="diagrams/Snowflake_Logo.svg" alt="Snowflake Logo" width="200"/>
+
 # Deployment Guide - Snowflake Video Intelligence Demo
 
 ## Table of Contents
@@ -17,34 +19,7 @@ This guide covers deploying the Snowflake Video Intelligence Demo to a productio
 
 ### Deployment Architecture
 
-```
-┌─────────────────────────────────────────┐
-│   Users (Web Browser)                   │
-└──────────────┬──────────────────────────┘
-               │
-               │ HTTPS
-               ▼
-┌─────────────────────────────────────────┐
-│   Snowflake Snowsight UI                │
-│   (Streamlit in Snowflake)              │
-└──────────────┬──────────────────────────┘
-               │
-               │ Internal Connection
-               ▼
-┌─────────────────────────────────────────┐
-│   VIDEO_INTELLIGENCE_DB                 │
-│   ├── VIDEO_ANALYSIS Schema             │
-│   ├── VIDEO_FILES Stage                 │
-│   └── Tables, Procedures, Functions     │
-└──────────────┬──────────────────────────┘
-               │
-               │ Compute
-               ▼
-┌─────────────────────────────────────────┐
-│   VIDEO_ANALYSIS_WH                     │
-│   (Virtual Warehouse)                   │
-└─────────────────────────────────────────┘
-```
+![Deployment Architecture](diagrams/deployment-architecture.svg)
 
 ### Deployment Timeline
 

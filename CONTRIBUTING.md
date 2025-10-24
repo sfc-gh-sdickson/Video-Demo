@@ -1,3 +1,5 @@
+<img src="diagrams/Snowflake_Logo.svg" alt="Snowflake Logo" width="200"/>
+
 # Contributing to Snowflake Video Intelligence Demo
 
 Thank you for your interest in contributing to this project! This document provides guidelines and instructions for contributing.

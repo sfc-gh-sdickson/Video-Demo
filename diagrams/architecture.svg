@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Snowflake Video Intelligence Architecture
+  </text>
+  
+  <!-- Layer 1: Streamlit UI -->
+  <rect x="100" y="60" width="600" height="70" fill="#29B5E8" stroke="#1a75bb" stroke-width="2" rx="5"/>
+  <text x="400" y="90" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Streamlit UI Layer
+  </text>
+  <text x="400" y="110" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    User Interface &amp; Interaction
+  </text>
+  
+  <!-- Arrow 1 -->
+  <line x1="400" y1="130" x2="400" y2="160" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Layer 2: Cortex AI -->
+  <rect x="100" y="160" width="600" height="70" fill="#764ba2" stroke="#5a3777" stroke-width="2" rx="5"/>
+  <text x="400" y="190" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Snowflake Cortex AI Layer
+  </text>
+  <text x="400" y="210" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    Natural Language Processing &amp; Video Analysis
+  </text>
+  
+  <!-- Arrow 2 -->
+  <line x1="400" y1="230" x2="400" y2="260" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Layer 3: Data Processing -->
+  <rect x="100" y="260" width="600" height="70" fill="#00D4AA" stroke="#00a080" stroke-width="2" rx="5"/>
+  <text x="400" y="290" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Data Processing Layer
+  </text>
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    Tables, Procedures, Functions, Views
+  </text>
+  
+  <!-- Arrow 3 -->
+  <line x1="400" y1="330" x2="400" y2="360" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Layer 4: Storage -->
+  <rect x="100" y="360" width="600" height="70" fill="#FF4B4B" stroke="#cc3c3c" stroke-width="2" rx="5"/>
+  <text x="400" y="390" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Storage Layer
+  </text>
+  <text x="400" y="410" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    Stages, Video Files, Metadata
+  </text>
+  
+  <!-- Arrow 4 -->
+  <line x1="400" y1="430" x2="400" y2="460" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Layer 5: Compute -->
+  <rect x="100" y="460" width="600" height="70" fill="#4A90E2" stroke="#3a70c2" stroke-width="2" rx="5"/>
+  <text x="400" y="490" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Compute Layer
+  </text>
+  <text x="400" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    Virtual Warehouses
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- Footer -->
+  <text x="400" y="570" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#666">
+    All layers run natively in Snowflake - No external dependencies
+  </text>
+</svg>
+

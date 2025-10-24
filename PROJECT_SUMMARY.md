@@ -1,3 +1,5 @@
+<img src="diagrams/Snowflake_Logo.svg" alt="Snowflake Logo" width="200"/>
+
 # Project Summary - Snowflake Video Intelligence Demo
 
 ## 📋 Executive Summary
@@ -59,68 +61,7 @@ The **Snowflake Video Intelligence Demo** is a production-ready application that
 
 ### System Components
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        User Layer                           │
-│                  (Web Browser Access)                       │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  Presentation Layer                         │
-│            Streamlit in Snowflake App                       │
-│  - Video Upload Interface                                   │
-│  - Question Input & Analysis                                │
-│  - History & Analytics Dashboard                            │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   AI/ML Layer                               │
-│              Snowflake Cortex AI                            │
-│  - Natural Language Processing                              │
-│  - Video Content Analysis                                   │
-│  - Question Answering                                       │
-│  Models: Mistral, Llama, Claude                             │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   Data Layer                                │
-│  DATABASE: VIDEO_INTELLIGENCE_DB                            │
-│  SCHEMA: VIDEO_ANALYSIS                                     │
-│  ├── Tables                                                 │
-│  │   ├── VIDEO_METADATA (file information)                 │
-│  │   ├── VIDEO_ANALYSIS_RESULTS (AI results)               │
-│  │   └── VIDEO_QUERIES (query history)                     │
-│  ├── Procedures                                             │
-│  │   ├── REGISTER_VIDEO                                    │
-│  │   ├── LOG_VIDEO_QUERY                                   │
-│  │   └── STORE_ANALYSIS_RESULT                             │
-│  └── Views                                                  │
-│      └── VIDEO_SUMMARY (aggregated insights)               │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  Storage Layer                              │
-│              Snowflake Stages                               │
-│  STAGE: VIDEO_FILES                                         │
-│  - Encrypted at rest                                        │
-│  - Unlimited scalability                                    │
-│  - Directory enabled                                        │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  Compute Layer                              │
-│          Virtual Warehouse                                  │
-│  WAREHOUSE: VIDEO_ANALYSIS_WH                               │
-│  - Auto-scaling                                             │
-│  - Auto-suspend                                             │
-│  - Resource monitoring                                      │
-└─────────────────────────────────────────────────────────────┘
-```
+![System Components Architecture](diagrams/system-components.svg)
 
 ### Technology Stack
 
@@ -137,31 +78,7 @@ The **Snowflake Video Intelligence Demo** is a production-ready application that
 
 ## 📁 Project Structure
 
-```
-video-intelligence-demo/
-│
-├── README.md                          # Main documentation
-├── INSTALLATION_GUIDE.md              # Step-by-step installation
-├── QUICK_START.md                     # 5-minute quick start
-├── DEPLOYMENT_GUIDE.md                # Production deployment
-├── PROJECT_SUMMARY.md                 # This file
-├── CONTRIBUTING.md                    # Contribution guidelines
-├── LICENSE                            # MIT License
-├── .gitignore                         # Git ignore rules
-├── requirements.txt                   # Python dependencies
-│
-├── setup/                             # SQL setup scripts
-│   ├── 01_initial_setup.sql          # Database & warehouse setup
-│   ├── 02_create_tables.sql          # Table creation
-│   └── 03_create_functions.sql       # Procedures & functions
-│
-├── streamlit_app.py                   # Main Streamlit application
-│
-└── examples/                          # Examples and samples
-    ├── sample_queries.sql             # 30+ example SQL queries
-    └── test_videos/                   # Test video directory
-        └── README.md                  # Test video guidelines
-```
+![Project Structure](diagrams/project-structure.svg)
 
 ---
 

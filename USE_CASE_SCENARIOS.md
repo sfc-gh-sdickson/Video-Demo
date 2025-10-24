@@ -1,3 +1,5 @@
+<img src="diagrams/Snowflake_Logo.svg" alt="Snowflake Logo" width="200"/>
+
 # Use Case Scenarios - Snowflake Video Intelligence Demo
 
 This document provides detailed examples of how to use the Video Intelligence Demo for specific real-world scenarios.
