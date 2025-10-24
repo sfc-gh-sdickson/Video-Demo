@@ -1,0 +1,136 @@
+/*******************************************************************************
+ * SNOWFLAKE VIDEO INTELLIGENCE DEMO - FUNCTIONS AND PROCEDURES
+ * 
+ * This script creates stored procedures and functions for video processing:
+ * - Video frame extraction
+ * - Video analysis using Cortex AI
+ * - Query processing
+ * 
+ * Prerequisites: Run 01_initial_setup.sql and 02_create_tables.sql first
+ ******************************************************************************/
+
+USE DATABASE VIDEO_INTELLIGENCE_DB;
+USE SCHEMA VIDEO_ANALYSIS;
+USE WAREHOUSE VIDEO_ANALYSIS_WH;
+
+-- Stored procedure to register a video file
+CREATE OR REPLACE PROCEDURE REGISTER_VIDEO(
+    P_FILE_NAME VARCHAR,
+    P_FILE_PATH VARCHAR,
+    P_FILE_SIZE NUMBER
+)
+RETURNS VARCHAR
+LANGUAGE SQL
+AS
+$$
+DECLARE
+    V_VIDEO_ID VARCHAR;
+BEGIN
+    -- Insert video metadata
+    INSERT INTO VIDEO_METADATA (FILE_NAME, FILE_PATH, FILE_SIZE_BYTES)
+    VALUES (:P_FILE_NAME, :P_FILE_PATH, :P_FILE_SIZE);
+    
+    -- Get the generated VIDEO_ID
+    SELECT VIDEO_ID INTO :V_VIDEO_ID 
+    FROM VIDEO_METADATA 
+    WHERE FILE_NAME = :P_FILE_NAME 
+    ORDER BY CREATED_AT DESC 
+    LIMIT 1;
+    
+    RETURN V_VIDEO_ID;
+END;
+$$;
+
+-- Stored procedure to log video queries
+CREATE OR REPLACE PROCEDURE LOG_VIDEO_QUERY(
+    P_VIDEO_ID VARCHAR,
+    P_QUESTION TEXT,
+    P_ANSWER TEXT,
+    P_MODEL VARCHAR,
+    P_RESPONSE_TIME NUMBER
+)
+RETURNS VARCHAR
+LANGUAGE SQL
+AS
+$$
+BEGIN
+    INSERT INTO VIDEO_QUERIES (VIDEO_ID, QUESTION, ANSWER, MODEL_USED, RESPONSE_TIME_MS)
+    VALUES (:P_VIDEO_ID, :P_QUESTION, :P_ANSWER, :P_MODEL, :P_RESPONSE_TIME);
+    
+    RETURN 'Query logged successfully';
+END;
+$$;
+
+-- Stored procedure to store analysis results
+CREATE OR REPLACE PROCEDURE STORE_ANALYSIS_RESULT(
+    P_VIDEO_ID VARCHAR,
+    P_ANALYSIS_TYPE VARCHAR,
+    P_FRAME_NUMBER NUMBER,
+    P_RESULT VARIANT,
+    P_CONFIDENCE FLOAT
+)
+RETURNS VARCHAR
+LANGUAGE SQL
+AS
+$$
+BEGIN
+    INSERT INTO VIDEO_ANALYSIS_RESULTS (
+        VIDEO_ID, 
+        ANALYSIS_TYPE, 
+        FRAME_NUMBER, 
+        ANALYSIS_RESULT, 
+        CONFIDENCE_SCORE
+    )
+    VALUES (
+        :P_VIDEO_ID, 
+        :P_ANALYSIS_TYPE, 
+        :P_FRAME_NUMBER, 
+        :P_RESULT, 
+        :P_CONFIDENCE
+    );
+    
+    RETURN 'Analysis result stored successfully';
+END;
+$$;
+
+-- Function to get video statistics
+CREATE OR REPLACE FUNCTION GET_VIDEO_STATS(P_VIDEO_ID VARCHAR)
+RETURNS TABLE (
+    TOTAL_QUERIES NUMBER,
+    TOTAL_ANALYSES NUMBER,
+    LAST_QUERY_TIME TIMESTAMP_NTZ,
+    PROCESSED BOOLEAN
+)
+AS
+$$
+    SELECT 
+        (SELECT COUNT(*) FROM VIDEO_QUERIES WHERE VIDEO_ID = P_VIDEO_ID) AS TOTAL_QUERIES,
+        (SELECT COUNT(*) FROM VIDEO_ANALYSIS_RESULTS WHERE VIDEO_ID = P_VIDEO_ID) AS TOTAL_ANALYSES,
+        (SELECT MAX(CREATED_AT) FROM VIDEO_QUERIES WHERE VIDEO_ID = P_VIDEO_ID) AS LAST_QUERY_TIME,
+        (SELECT PROCESSED FROM VIDEO_METADATA WHERE VIDEO_ID = P_VIDEO_ID) AS PROCESSED
+$$;
+
+-- View for video summary
+CREATE OR REPLACE VIEW VIDEO_SUMMARY AS
+SELECT 
+    vm.VIDEO_ID,
+    vm.FILE_NAME,
+    vm.UPLOAD_TIMESTAMP,
+    vm.FILE_SIZE_BYTES,
+    vm.PROCESSED,
+    COUNT(DISTINCT vq.QUERY_ID) AS TOTAL_QUERIES,
+    COUNT(DISTINCT var.ANALYSIS_ID) AS TOTAL_ANALYSES,
+    MAX(vq.CREATED_AT) AS LAST_QUERY_TIME
+FROM VIDEO_METADATA vm
+LEFT JOIN VIDEO_QUERIES vq ON vm.VIDEO_ID = vq.VIDEO_ID
+LEFT JOIN VIDEO_ANALYSIS_RESULTS var ON vm.VIDEO_ID = var.VIDEO_ID
+GROUP BY 
+    vm.VIDEO_ID,
+    vm.FILE_NAME,
+    vm.UPLOAD_TIMESTAMP,
+    vm.FILE_SIZE_BYTES,
+    vm.PROCESSED;
+
+-- Display success message
+SELECT 'Functions and procedures created successfully!' AS STATUS;
+

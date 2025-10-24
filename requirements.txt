@@ -1,0 +1,34 @@
+# Snowflake Video Intelligence Demo - Python Dependencies
+# 
+# Note: When deploying to Streamlit in Snowflake, most packages are pre-installed.
+# This file is for reference and local development only.
+
+# Core Snowflake packages (pre-installed in Streamlit in Snowflake)
+snowflake-snowpark-python>=1.11.1
+snowflake-connector-python>=3.6.0
+
+# Streamlit (pre-installed in Streamlit in Snowflake)
+streamlit>=1.28.0
+
+# Data manipulation (pre-installed in Streamlit in Snowflake)
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Additional packages that may be needed for local development
+# (uncomment if running locally, not needed for Streamlit in Snowflake)
+
+# pyarrow>=14.0.0
+# requests>=2.31.0
+# python-dotenv>=1.0.0
+
+# Development and testing tools (optional)
+# pytest>=7.4.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.5.0
+
+# Note: 
+# - Streamlit in Snowflake has a pre-configured environment
+# - No package installation needed for deployment
+# - This file is primarily for documentation and local testing
+
