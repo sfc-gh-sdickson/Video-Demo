@@ -85,10 +85,10 @@ Stage: VIDEO_FILES
 3. Execute the script
 
 **Script creates:**
-- Table: `VIDEO_METADATA` - Stores video file information
-- Table: `VIDEO_ANALYSIS_RESULTS` - Stores AI analysis results
-- Table: `VIDEO_QUERIES` - Stores user questions and answers
-- Indexes for query performance
+- Table: `VIDEO_METADATA` - Hybrid table storing video file information
+- Table: `VIDEO_ANALYSIS_RESULTS` - Hybrid table storing AI analysis results
+- Table: `VIDEO_QUERIES` - Hybrid table storing user questions and answers
+- (Indexes are automatically managed by Hybrid Tables)
 
 **Execution:**
 ```sql
