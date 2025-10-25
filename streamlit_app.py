@@ -14,7 +14,6 @@ Author: Snowflake Inc.
 import streamlit as st
 from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
-from snowflake.cortex import Complete
 import json
 import time
 from datetime import datetime
@@ -260,11 +259,13 @@ Provide a detailed, specific answer. If analyzing for:
 Answer:"""
 
                                 # Call Cortex Complete
-                                response = Complete(
-                                    model_choice,
-                                    context,
-                                    session=session
-                                )
+                                response_df = session.sql(f"""
+                                    SELECT SNOWFLAKE.CORTEX.COMPLETE(
+                                        '{model_choice}',
+                                        '{context.replace("'", "''")}'
+                                    ) AS RESULT
+                                """).collect()
+                                response = response_df[0]['RESULT']
                                 
                                 response_time = (time.time() - start_time) * 1000
                                 
